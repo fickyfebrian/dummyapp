@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pastel-gray: #f5f5f5;
+
+}
+
+.bg-pastel-gray {
+  background-color: var(--pastel-gray);
+}
+
+/* index.css */
+
+:root {
+  --pastel-blue: #a2c2e6;
+  --pastel-blue-dark: #6a9ac0;
+}
+
+.bg-pastel-blue {
+  background-color: var(--pastel-blue);
+}
+
+.hover\:text-pastel-blue-dark:hover {
+  color: var(--pastel-blue-dark);
+}
+
