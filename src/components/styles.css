@@ -6,7 +6,21 @@
 }
 
 html, body {
-  overflow: hidden;
+  overflow: auto;
+}
+
+.no-scroll {
+  overflow: hidden; /* Menonaktifkan scroll pada body */
+  position: fixed;  /* Menghindari scroll dengan membuat posisi body tetap */
+  width: 100%;      /* Menjaga lebar body tetap penuh */
+}
+
+.app-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  min-height: 100vh; /* Ensure full viewport height */
+  position: relative;
 }
 
 .aurora-background {
@@ -21,8 +35,20 @@ html, body {
   z-index: -1; /* Ensure it is behind other content */
 }
 
-.card-loading {
+.card-loading {  
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 100px;
+  min-width: 100px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  max-width: 500px;
 }
 
 .card-loading .loading-overlay {
@@ -50,4 +76,26 @@ html, body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* styles.css */
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-pagination-bullet {
+  background: #000;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff;
 }

@@ -6,7 +6,6 @@ import Home from './components/Home';
 import Products from './components/Products';
 import Comments from './components/Comments';
 import Users from './components/Users';
-import Posts from './components/Posts';
 import Recipes from './components/Recipes';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -24,7 +23,6 @@ function App() {
           <Route path="/products" element={<ProtectedRoute><Products /></ProtectedRoute>} />
           <Route path="/comments" element={<ProtectedRoute><Comments /></ProtectedRoute>} />
           <Route path="/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
-          <Route path="/posts" element={<ProtectedRoute><Posts /></ProtectedRoute>} />
           <Route path="/recipes" element={<ProtectedRoute><Recipes /></ProtectedRoute>} />
         </Routes>
       </main>

@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles.css";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRandom, faShuffle } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [user, setUser] = useState(null);
   const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
   const [loading, setLoading] = useState(false);
   const [loadingCard, setLoadingCard] = useState(false);
 
@@ -35,6 +38,7 @@ function Home() {
     try {
       const response = await axios.get("https://dummyjson.com/quotes/random");
       setQuote(response.data.quote);
+      setAuthor(response.data.author);
     } catch (error) {
       console.error("Failed to fetch quote:", error);
     } finally {
@@ -65,7 +69,7 @@ function Home() {
   return (
     <div className="app-container">
       <div className="aurora-background"></div>
-      <div className="min-h-[100px] min-w-[100px] relative z-10 flex flex-col gap-4 items-center justify-center px-4">
+      <div className="min-h-[100px] min-w-[100px] relative z-10 px-4 py-4">
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,12 +91,13 @@ function Home() {
                 <div className="spinner"></div>
               </div>
             )}
-            <p className="mb-4">"{quote}"</p>
+            <p className="mb-4 text-center ">"{quote}"</p>
+            <p className="mb-4 text-center font-semibold">-{author}-</p>
             <button
               onClick={fetchRandomQuote}
-              className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+              className="px-4 py-2 text-white bg-blue-400 rounded hover:bg-blue-600 "
             >
-              Get Random Quote
+              <FontAwesomeIcon icon={faRandom} size="xl" />
             </button>
           </div>
         </motion.div>

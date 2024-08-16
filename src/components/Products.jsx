@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ModalProducts from "../modal/Products"; // Pastikan path ini benar
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -134,7 +136,7 @@ function Products() {
             />
             <h2 className="text-lg font-bold mb-2">{product.title}</h2>
             <p className="text-gray-600 font-semibold mb-2">${product.price}</p>
-            <p className="text-black text-sm">⭐{product.rating}</p>
+            <p className="text-black text-sm"><FontAwesomeIcon icon={faStar} size="l" className="text-yellow-500" /> {product.rating}</p>
           </div>
         ))}
       </div>
